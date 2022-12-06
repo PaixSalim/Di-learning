@@ -4,6 +4,7 @@ print('Hello World'*4)
 ###Exercice 2 ###
 print('(99¨3)*8 = ',pow(99,3)*8)
 
+
 ###Exercice 3 ###
 5 < 3  #donne false
 3 == 3  #donne true
@@ -26,31 +27,29 @@ print(info)
 a = 14
 b= 6
 if a>b :
-    print('Hello World')
+    print(a, b,'Hello World')
     
     
 ###Exercice 7 ###
 
-nob = input("Entrer un nombre")
-if (nob % 2 == 0) :
+nob = int(input("Entrer un nombre : "))
+if nob%2 == 0 :
     print("le nombre ", nob, ' est un monbre paire')
 else:
     print("le nombre ", nob, ' est un monbre impaire')
     
 ###Exercice 8 ###
-nom = input('Entrer votre : ')
-if (nom[0]=='s'):
-    print("Les serpent ne parle pas woo!!!!")
-elif (nom[0]=='R'):
-    print("Les Rats sont des marmayeurs pas woo!!!!")
+nom = input('Entrer votre Prenom : ')
+if (nom=='Salim'):
+    print("Les serpent ne parle pas woo!!!! Mais on a la meme prenom")
 else :
     print("jai pas de blague")
     
     
 ###Exercice 9 ###
-tail= input("Entrer votre taille")
+tail= int(input("Entrer votre taille : "))
 if (tail>145):
-    print('Vous avez la taille normale monsieur')
+    print('Vous avez la taille normale monsieur ')
 else:
     print("Vous avez besoin de grandir d'avantage")
 
