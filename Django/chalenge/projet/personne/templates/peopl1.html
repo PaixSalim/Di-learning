@@ -1,0 +1,27 @@
+{%load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"> 
+</head>
+<body>
+  
+  <h1></h1> 
+  {% if person %}
+    <div class="col-md-12">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <h3 class="mb-0 text-center">  <strong class="d-inline-block mb-2 text-success">Informations sur Personnes </strong> </h3>
+          <div class="col p-4 d-flex flex-column position-static">
+            <h4> <strong class="d-inline-block mb-2 text-success">ID : {{person.id}}</strong> <h4>
+            <h3 class="mb-0">Nom : {{person.name}}</h3>
+            <h4><div class="mb-1 text-muted">Ages : {{person.age}} ans</div></h2>
+            <p class="mb-auto">Pays : {{person.country}}</p>
+          </div>
+        </div>
+    </div>
+    {% else  %}
+    <h4> La liste des Utilisateurs est vide</h4>
+  {% endif %}
+</body>
+</html>
