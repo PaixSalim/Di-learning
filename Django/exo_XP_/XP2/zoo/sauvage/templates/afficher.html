@@ -1,0 +1,38 @@
+{%load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"> 
+</head>
+<body>
+<div class="row mb-2">
+    {% if info %}
+            <div class="col-md-12">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <h3 class="mb-0 text-center">  <strong class="d-inline-block mb-2 text-success">Informations de L'animal </strong> </h3>
+                  <div class="col p-4 d-flex flex-column position-static">
+                    <h4> <strong class="d-inline-block mb-2 text-success">ID : {{info.id}}</strong> <h4>
+                    <h3 class="mb-0">Nom : {{info.nom}}</h3>
+                    <h4><div class="mb-1 text-muted">famille : {{info.famil.nom}}</div></h2>
+                        <h4><div class="mb-1 text-muted">vitesse : {{info.vitesse}} km/h</div></h2>
+                    <p class="mb-auto">nbr_pattes : {{info.patte}} pattes</p>
+                    <p class="mb-auto">poids : {{info.poid}} kg</p>
+                  </div>
+                </div>
+            </div>
+        
+        
+          
+          {% else  %}
+            <h4> La liste des animaux est vide</h4>
+          {% endif %}
+          <a href='{% url 'home' %}'class='btn btn-primary'>Retour</a>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
