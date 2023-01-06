@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class='col-sm-12'>
+    <h3 class="text-center">Listes des Locations</h3>
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Prenom(s)</th>
+          <th scope="col">Vehicule loué</th>
+          <th scope="col">montant</th>
+          <th scope="col">date location</th>
+          <th scope="col">date location</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for pers in locations %}
+        <tr>
+          <td>{{pers.id}}</td>
+          <td>{{pers.client_id.nom}}</td>
+          <td>{{pers.client_id.prenom}}</td>
+          <td>{{pers.vehicule_id.type_vehicule_id.nom}}</td>
+          <td>{{pers.cout}}</td>
+          <td>{{pers.date_location}}</td>
+          <td>{{pers.date_retour}}</td>
+          <td>
+            <a href='{% url 'afficher' pers.id %}' class = 'btn btn-success btn-sm'>Afficher</a>
+            
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+   </div>
+    
+    {% endblock content %}

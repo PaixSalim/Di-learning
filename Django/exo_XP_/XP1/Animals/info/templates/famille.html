@@ -1,0 +1,36 @@
+{%load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"> 
+</head>
+<body>
+  
+  <h1>Listes des Annimaux de la famille</h1> 
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Vitesse</th>
+        <th scope="col">nbr pates</th>
+        <th scope="col">id_Familles</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        {% for ani in animal %} 
+      <tr>
+        <td>{{ani.id}}</td>
+        <td>{{ani.name}}</td>
+        <td>{{ani.speed}}</td>
+        <td>{{ani.legs}}</td>
+        <td>{{ani.family}}</td>
+        
+      </tr>
+      {% endfor %} 
+    </table>
+    <td><a href='/' class = 'btn btn-primary btn-sm'>Retour</a></td>
+</body>
+</html>
