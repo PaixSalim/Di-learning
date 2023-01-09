@@ -24,12 +24,12 @@
           <td>{{pers.client_id.nom}}</td>
           <td>{{pers.client_id.prenom}}</td>
           <td>{{pers.vehicule_id.type_vehicule_id.nom}}</td>
-          <td>{{pers.cout}}</td>
+          <td>{{pers.cout}} mille</td>
           <td>{{pers.date_location}}</td>
           <td>{{pers.date_retour}}</td>
           <td>
-            <a href='{% url 'afficher' pers.id %}' class = 'btn btn-success btn-sm'>Afficher</a>
-            
+            <a href='{% url 'afficher' pers.id %}' class = 'btn btn-success btn-sm'>Detail</a>
+            <a href='{% url 'afficher' pers.id %}' class = 'btn btn-warning btn-sm'>Modifier</a>
           </td>
         </tr>
         {% endfor %}

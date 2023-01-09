@@ -28,39 +28,34 @@
   <form method='POST' action="">
     {% csrf_token %}
     <img class="mb-4" src="{% static 'image/bootstrap-logo.svg' %}" alt="" width="72" height="57">
-    <h1 class="h3 mb-3 fw-normal">Remplir le formulaire </h1>
+    <h1 class="h3 mb-3 fw-normal">Enregistrer nouveau Vehicule </h1>
     <div class="form-floating">
-         <select class="form-control" name="client" required>
+         <select class="form-control" name="taille" required>
              {% for pers in inf %}
-              <option value='{{pers.id }}'>{{ pers.nom }} {{ pers.prenom }}</option>
+              <option value='{{pers.id }}'>{{ pers.nom }}</option>
             {% endfor %}
          </select>
-        <label for="client">Identifiant d'Utilisateur</label>
+        <label for="client">Taille du véhicule</label>
       </div>
       <div class="form-floating">
-        <select class="form-control" name="voiture" required>
+        <select class="form-control" name="type" required>
           {% for voi in voit %}
-           <option value='{{voi.id }}'>{{ voi.type_vehicule_id.nom }}</option>
+           <option value='{{voi.id }}'>{{ voi.nom }}</option>
          {% endfor %}
       </select>
-        <label for="voiture">Identifiant du Vehicule</label>
+        <label for="voiture">Type du Vehicule</label>
       </div>
 
       <div class="form-floating">
-        <input type="date" class="form-control" id="nom" name="date_crea" placeholder="date de location" required>
-        <label for="date_crea">Date location</label>
-      </div>
-      <div class="form-floating">
-        <input type="date" class="form-control" id="prenom" name="date_ret" placeholder="date de retour" required>
-        <label for="date_ret">date de retour</label>
+        <input type="date" class="form-control" id="nom" name="date_crea" placeholder="date de location">
+        <label for="date_crea">Date Creation</label>
       </div>
     <div class="form-floating">
-      <input type="number" class="form-control" id="email" name="cout" placeholder="montant de la location" required>
-      <label for="email">Montant</label>
+      <input type="number" class="form-control" id="email" name="cout" placeholder="montant de la location">
+      <label for="email">Valeur en million</label>
     </div>
     
     <button class="w-100 btn btn-lg btn-primary" type="submit">Valider</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
   </form>
 </main>
 
