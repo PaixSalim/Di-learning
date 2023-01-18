@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import *
-from .forms import EnregistreUser
+from .forms import *
 
 
 
@@ -14,8 +14,9 @@ def home(request):
 
 def locations(request):
     anima = location.objects.all()
+    statu = location.objects.all()
     
-    return render(request,'location.html', {'locations' : anima})
+    return render(request,'location.html', {'locations' : anima, 'statut':statu})
 
 def listclient(request):
     clien = client.objects.all()
@@ -92,6 +93,19 @@ def modifier(request, id):
         pi = client.objects.get(pk=id)
         fm = EnregistreUser(instance= pi)
     return render(request, 'modifier_client.html', {'form':fm})
+
+def modifierloc(request, id):
+    if request.method == 'POST':
+        pi = location.objects.get(pk=id)
+        fm = ModifierLoc(request.POST, instance=pi )
+        if fm.is_valid():
+            fm.save()
+            messages.success(request, 'Information sur la location modifié avec succès')
+            return redirect('home')
+    else:
+        pi = location.objects.get(pk=id)
+        fm = ModifierLoc(instance= pi)
+    return render(request, 'modifier_loc.html', {'form':fm})
 
 
    

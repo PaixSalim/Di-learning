@@ -47,23 +47,23 @@
   <header class="blog-header py-3">
     <div class="row flex-nowrap justify-content-between align-items-center">
       <div class="col-4 pt-1">
-        <a class="link-secondary" href="/inscrire">S'inscrire</a>
+        
       </div>
       <div class="col-4 text-center">
-        <a class="blog-header-logo text-dark" href="#">BikeStore</a>
+        <a class="blog-header-logo text-dark" href="{% url 'home' %}">BikeStore</a>
       </div>
       <div class="col-4 d-flex justify-content-end align-items-center">
         <a class="link-secondary" href="#" aria-label="Search">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
         </a>
-        <a class="btn btn-sm btn-outline-secondary" href="/login">se connecter</a>
+      
       </div>
     </div>
   </header>
 
   <div class="nav-scroller py-1 mb-2">
     <nav class="nav d-flex justify-content-between">
-      <a class="p-2 link-secondary" href="location">Location en cour</a>
+      <a class="p-2 link-secondary" href="location">Liste des Locations</a>
       <a class="p-2 link-secondary" href="inscrire">Faire location</a>
       <a class="p-2 link-secondary" href="client">Liste client</a>
       <a class="p-2 link-secondary" href="inscrire_client">Ajouter client</a>
@@ -79,7 +79,7 @@
 <main class="container">
   <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
     <div class="col-md-6 px-0">
-      <h1 class="display-4 fst-italic">Liste des Vehicules en location </h1>
+      <h1 class="display-4 fst-italic">Site de Location de Vehicules en ligne </h1>
       <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
       <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
     </div>

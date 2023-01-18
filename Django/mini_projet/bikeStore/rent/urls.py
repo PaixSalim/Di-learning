@@ -11,6 +11,7 @@ urlpatterns = [
     path('inscrire_vehicule',ajoutervehi, name='inscrirer'),
     path('location<int:id>/',afficher , name='afficher' ),
     path('client<int:id>/',modifier , name='modifier_cl' ),
+    path('modifloc<int:id>/',modifierloc , name='modifier_loc' ),
     path('client',listclient , name='liste' ),
    
 ]

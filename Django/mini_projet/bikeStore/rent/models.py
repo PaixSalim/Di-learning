@@ -23,9 +23,10 @@ class vehicule(models.Model):
     type_vehicule_id = models.ForeignKey(type_vehicule, default=0, on_delete=models.CASCADE)
     
 class location(models.Model):
-    date_location = models.DateTimeField()
+    date_location = models.DateTimeField(auto_now_add=0)
     date_retour = models.DateTimeField()
     cout = models.IntegerField()
+    statu = models.BooleanField(default=0)
     client_id = models.ForeignKey(client, default=0, on_delete=models.CASCADE)
     vehicule_id = models.ForeignKey(vehicule, default=0, on_delete=models.CASCADE)
     

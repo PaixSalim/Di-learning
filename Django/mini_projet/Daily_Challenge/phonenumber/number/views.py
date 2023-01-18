@@ -15,7 +15,7 @@ def home(request):
             reg = User(name = nm, number = pm, username=usm )
             reg.save()
             fm = EnregistreUser()
-            messages.success(request, 'Information du client enregistré  avec succès')
+            messages.success(request, 'Information du Utilisateur enregistré  avec succès')
             return redirect('home')
              
     else :

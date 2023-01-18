@@ -1,5 +1,5 @@
 from django import forms
-from .models import client
+from .models import *
 
 
 class EnregistreUser(forms.ModelForm):
@@ -13,4 +13,14 @@ class EnregistreUser(forms.ModelForm):
             'email' : forms.TextInput(attrs = {'class': "form-control"}),
             'ville' : forms.TextInput(attrs = {'class': "form-control"}),
             'pays' : forms.TextInput(attrs = {'class': "form-control"}),
+        }
+        
+class ModifierLoc(forms.ModelForm):
+    class Meta:
+        model = location
+        fields = ['date_retour', 'cout', 'statu']
+        widgets = {
+            'date_retour' : forms.TextInput(attrs = {'class': "form-control"}),
+            'cout' :forms.TextInput(attrs = {'class': "form-control"}),
+            'statu' : forms.TextInput(attrs = {'class': "form-control", 'placeholder':'veuillez remplacer False par OK'})
         }

@@ -1,0 +1,41 @@
+{% extends 'bose.html' %}
+{%load static %}
+{% block content %}
+  <form method='POST' action="" enctype="multipart/form-data”>
+    {% csrf_token %}
+    <img class="mb-4" src="{% static 'image/bootstrap-logo.svg' %}" alt="" width="72" height="57">
+    <h1 class="h3 mb-3 fw-normal">Enregistrer Une nouvelle chambre </h1>
+    <div class="form-floating">
+
+         <input type='number' class="form-control" name="taille"  placeholder="Taille de la chambre" required>
+        
+      </div>
+      <div class="form-floating">
+        <select class="form-control" name="type" required>
+          <label for="voiture">Type de la chambre</label>
+          {% for voi in voit %}
+           <option value='{{voi.id }}'>{{ voi.nom }}</option>
+         {% endfor %}
+      </select>
+       
+      </div>
+
+      <div class="form-floating">
+        <label for="date_crea">Date Amenagement</label>
+        <input type="date" class="form-control" id="nom" name="date_crea" placeholder="date de location">
+        
+      </div>
+    <div class="form-floating">
+
+      <input type="number" class="form-control" id="email" name="cout" placeholder="montant de la location">
+      
+    </div>
+    
+    <div class="form-floating">
+      <input type="file" class="form-control" id="email" name="imag" placeholder="Image de la chambre">
+    </div> 
+ <br>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Valider</button>
+  </form>
+
+{% endblock content %}
