@@ -106,8 +106,7 @@ def ajoutech(request):
         typ = request.POST['type']
         dat = request.POST['date_crea']
         co= request.POST['cout']
-        phot = request.POST['imag'] 
-        mon_chambr = chambre( taille=tail, type_chambre_id_id=typ, date_creation=dat, cout=co, photo=phot,)
+        mon_chambr = chambre( taille=tail, type_chambre_id_id=typ, date_creation=dat, cout=co, photo=request.FILES['img'],)
         mon_chambr.save()
         messages.success(request, 'chambre enregistré avec succès')
         return redirect('administration')
@@ -115,12 +114,15 @@ def ajoutech(request):
     return render(request, 'personel/ajoutervhi.html',{ 'voit':voit} )
 
 def registerch(request):
+    form = EnregistreChambre()
     if request.method == 'POST':
         form = EnregistreChambre(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect("administration")
-    return render(request, 'personel/ajout_cha.html' )
+    return render(request, 'personel/ajout_cha.html', {'form':form} )
+
+
 
 def modifier(request, id):
     if request.method == 'POST':

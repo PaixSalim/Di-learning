@@ -3,10 +3,9 @@ from django.db import models
 class type_chambre(models.Model):
     nom = models.CharField(max_length=30)
     
-    
+    def __str__(self):
+        return self.nom
 
-class type_chambre(models.Model):
-    nom = models.CharField(max_length=30)
 
 
 
@@ -24,17 +23,17 @@ class avis(models.Model):
     
     
 class chambre(models.Model):
-    date_creation = models.DateTimeField()
+    date_creation = models.DateField(default="null")
     cout = models.IntegerField()
     taille = models.IntegerField()
     type_chambre_id = models.ForeignKey(type_chambre, default=0, on_delete=models.CASCADE)
-    photo = models.ImageField(verbose_name='photo de chambre' , default='0', upload_to='img_chambre') 
+    photo = models.ImageField(verbose_name='photo de chambre' , default="img_chambre/default.jpg", upload_to='img_chambre') 
     
     def photoUrl(self ):
         try:
             url=self.photo.url 
         except : 
-            url=""
+            url="img_chambre/default.jpg"
         return url
     
 class location(models.Model):

@@ -19,14 +19,7 @@ class EnregistreChambre(forms.ModelForm):
     class Meta:
         model = chambre
         fields =   '__all__'
-        widgets = {
-            'date_creation' :forms.TextInput(attrs = {'class': "form-control"}),
-            'cout' : forms.TextInput(attrs = {'class': "form-control"}),
-            'taille' :forms.TextInput(attrs = {'class': "form-control"}),
-            'type_chambre_id' : forms.TextInput(attrs = {'class': "form-control"}),
-            'photo' : forms.FileInput(attrs = {'class': "form-control"}),
-            
-        }
+      
         
 class ModifierLoc(forms.ModelForm):
     class Meta:

@@ -6,7 +6,7 @@
         <div class="col p-4 d-flex flex-column position-static">
           
           <h3 class="mb-0 text-center">  <strong class="d-inline-block mb-2 text-success">Ajouter une chambre </strong> </h3>
-              <form action='' method='POST'>
+              <form action='' method='POST' enctype="multipart/form-data">
                 {% csrf_token %}
                  {{form.as_p}}
                <input type='submit' class='btn btn-success' value ='Valider'>

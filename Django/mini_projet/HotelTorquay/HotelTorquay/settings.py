@@ -9,7 +9,10 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+HOSTNAME = 'localhost'
+USERNAME = 'postgres'
+PASSWORD = 'salim'
+DATABASE = 'bike'
 from pathlib import Path
 import os 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -76,10 +79,21 @@ WSGI_APPLICATION = 'HotelTorquay.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': DATABASE,
+        'USER': USERNAME,
+        'PASSWORD': PASSWORD,
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
+
+"""DATABASES = {
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}
+}"""
 
 
 # Password validation
